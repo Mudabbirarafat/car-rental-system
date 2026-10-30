@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@2.31.1
+        with:
+          php-version: '8.3'
+
+      # Syntax-checks every PHP file. Catches the class of error that only
+      # shows up as a white screen in the browser.
+      - name: Syntax check
+        run: |
+          status=0
+          while IFS= read -r f; do
+            php -l "$f" || status=1
+          done < <(find . -name '*.php' -not -path './vendor/*')
+          exit $status

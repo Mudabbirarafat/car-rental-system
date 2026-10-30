@@ -1,5 +1,7 @@
 # 🚗 Car Rental System (PHP & MySQL)
 
+[![CI](https://github.com/Mudabbirarafat/car-rental-system/actions/workflows/ci.yml/badge.svg)](https://github.com/Mudabbirarafat/car-rental-system/actions/workflows/ci.yml)
+
 A full-stack Car Rental Web Application built using **PHP, MySQL, and Bootstrap 5**.  
 This system supports two types of users: **Customers** and **Car Rental Agencies**.
 
